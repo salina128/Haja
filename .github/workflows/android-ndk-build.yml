@@ -1,6 +1,5 @@
 name: Android NDK Build
 
-# Trigger the build on push or manual run
 on:
   push:
     branches:
@@ -35,9 +34,9 @@ jobs:
       - name: Build release APK
         run: ./gradlew assembleRelease --stacktrace
 
-      # 5️⃣ Upload APK artifact
+      # 5️⃣ Upload APK artifact (updated to v4)
       - name: Upload APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app-release-apk
           path: app/build/outputs/apk/release/app-release.apk
